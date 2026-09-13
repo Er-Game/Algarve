@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Fuengirola ⇆ Algarve</title>
+
+<!-- iOS "app" behaviour -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Algarve">
+<meta name="theme-color" content="#123647">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+<link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="app-header__title">
+      <span class="app-header__kicker" id="countdown">—</span>
+      <h1>Fuengirola <span class="app-header__arrow">⇆</span> Algarve</h1>
+    </div>
+  </header>
+
+  <!-- SCREENS -->
+  <main class="screens">
+
+    <!-- RUTA -->
+    <section class="screen" id="screen-ruta" data-screen="ruta">
+      <div class="day-tabs" id="day-tabs"></div>
+      <div class="route-list" id="route-list"></div>
+    </section>
+
+    <!-- DORMIR -->
+    <section class="screen" id="screen-dormir" data-screen="dormir" hidden>
+      <div class="segmented" id="lodging-toggle">
+        <button class="segmented__btn is-active" data-mode="hotels">🏨 Hoteles</button>
+        <button class="segmented__btn" data-mode="vans">🚐 Furgonetas</button>
+      </div>
+
+      <div id="hotels-panel" class="panel"></div>
+      <div id="vans-panel" class="panel" hidden></div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="screen" id="screen-checklist" data-screen="checklist" hidden>
+      <p class="screen-lead">Cosas por confirmar antes de salir. Se guardan solas en este teléfono.</p>
+      <div class="checklist" id="checklist"></div>
+    </section>
+
+  </main>
+
+  <!-- TAB BAR -->
+  <nav class="tabbar">
+    <button class="tabbar__item is-active" data-target="ruta">
+      <svg viewBox="0 0 24 24" class="tabbar__icon"><path d="M3 12h4l3-9 4 18 3-9h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Ruta</span>
+    </button>
+    <button class="tabbar__item" data-target="dormir">
+      <svg viewBox="0 0 24 24" class="tabbar__icon"><path d="M3 10.5V19h18v-8.5M3 10.5L12 4l9 6.5M8 19v-5h8v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Dormir</span>
+    </button>
+    <button class="tabbar__item" data-target="checklist">
+      <svg viewBox="0 0 24 24" class="tabbar__icon"><path d="M9 11l2 2 4-4M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pendientes</span>
+    </button>
+  </nav>
+
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
